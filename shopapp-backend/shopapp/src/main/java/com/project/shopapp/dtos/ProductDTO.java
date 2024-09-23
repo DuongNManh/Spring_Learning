@@ -17,20 +17,17 @@ public class ProductDTO {
     @NotBlank(message = "Product's name is required")
     @Size(min = 3, max = 100, message = "Product's name must be between 5 and 100 characters")
     private String name;
-    
+
     private String description;
 
     @Min(value = 0, message = "Product's price must be greater than 0")
     @Max(value = 1000000, message = "Product's price must be less than 1000000")
-    private float price;
+    private Float price;
 
     @NotNull(message = "Product's category_id is required")
     @JsonProperty("category_id")
-    private int categoryId;
+    private Long categoryId;
 
     private String thumbnail;
-
-    private List<MultipartFile> files;
-
 
 }
